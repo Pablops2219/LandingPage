@@ -1,0 +1,79 @@
+.filas-container {
+  display: flex;
+  flex-flow: column;
+  /* justify-content: center; */
+  align-items: center;
+  height: 60vh;
+  /* border: 2px solid red; */
+}
+
+.fila {
+  min-height: 200px;
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  align-items: center;
+  /* border: 2px solid blue; */
+  width: 100%;
+  gap: 50px;
+}
+
+.fila-bloque {
+  display: flex;
+  flex-flow: row nowrap;
+  /* border: 2px solid green; */
+  height: 90%;
+  width: 150%;
+}
+.fila-bloque-img {
+  width: 170%;
+  background: url("/JUANLUIS10.jpg") no-repeat center center/cover;
+  background-position: 50% 20%;
+}
+
+.fila-bloque-alt {
+  display: flex;
+  flex-flow: row nowrap;
+  /* border: 2px solid green; */
+  height: 90%;
+  width: 90%;
+}
+
+.fila-bloque-alt-img {
+  width: 100%;
+  background: url("/JUANLUIS7.jpg") no-repeat center center/cover;
+}
+
+.fila-texto{
+  padding: 10px;
+}
+
+.fila-texto-alt{
+  display: flex;
+  padding: 10px;
+}
+
+
+.fila-texto p {
+  font-size: 1em;
+}
+
+.titulo {
+  font-size: 1em;
+  border-radius: 50rem;
+  display: inline-block;
+  background-color: #1cb9d8;
+  font-weight: 700;
+  color: white;
+}
+
+.titulo-alt{
+  justify-self: center;
+  align-self: center;
+  font-size: 1.5em;
+  border-radius: 1.5rem;
+  display: inline-block;
+  background-color: #d81c1c;
+  font-weight: 700;
+  color: white;
+}

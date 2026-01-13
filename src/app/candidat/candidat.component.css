@@ -1,0 +1,89 @@
+
+/* --- SECCION SOBRE MI --- */
+
+.sobre-mi-container {
+  display: grid;
+  grid-template-columns: 2fr 1fr; /* Dos columnas iguales */
+  background-color: #fff;
+  overflow: hidden;
+
+  @media (max-width: 992px) {
+    grid-template-columns: 1fr; /* En móvil una sola columna */
+  }
+}
+
+.image-column {
+  position: relative;
+  .profile-img {
+    width: 100%;
+    object-fit: cover; /* Asegura que la imagen llene el espacio */
+  }
+}
+
+.content-column {
+  position: relative;
+  padding: 2rem 10% 2rem 5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.header-section {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 15px;
+  margin-right: 100px;
+  margin-bottom: 1rem;
+  z-index: 2;
+
+  .arrow {
+    font-size: 3rem;
+    color: #ff8c00; /* Naranja de la flecha */
+    font-weight: 300;
+  }
+
+  .title {
+    font-size: 4rem;
+    font-weight: 800;
+    letter-spacing: -2px;
+    margin: 0;
+    color: #000;
+
+    .highlight {
+      color: #ff8c00; /* El "mi" en naranja */
+    }
+  }
+
+  /* El círculo naranja difuminado detrás del texto */
+  .glow-circle {
+    position: absolute;
+    top: -50px;
+    right: 150px;
+    width: 250px;
+    height: 250px;
+    background: radial-gradient(
+      circle,
+      rgba(255, 140, 0, 0.658) 0%,
+      rgba(255, 255, 255, 0) 70%
+    );
+    filter: blur(20px);
+    z-index: -1;
+  }
+
+  .text-content {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #333;
+    text-align: justify;
+
+    strong {
+      font-weight: 600;
+      border-bottom: 1px solid #ccc; /* Estilo de los enlaces en la imagen */
+    }
+
+    p {
+      margin-bottom: 1rem;
+    }
+  }
+}

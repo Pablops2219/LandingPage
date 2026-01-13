@@ -1,0 +1,320 @@
+/* --- ESTILOS BANNER --- */
+
+.banner-container {
+  transition: all;
+  position: relative;
+  width: 100%; /* Relación de aspecto aproximada */
+  height: 540px;
+  background: #fff;
+  overflow: hidden;
+}
+
+/* --- Fondo --- */
+.background-layer {
+  background: url("/JUANLUIS20.jpg") no-repeat center center/cover;
+  /* background-position: 500% 50%; */
+  width: 100%;
+  height: 100%;
+  /* Simulamos el fondo desenfocado de la oficina */
+  /* filter: blur(8px) opacity(0.5); */
+  z-index: 1;
+}
+
+/* --- Efecto de color desenfocado (Izquierda) --- */
+.color-blur-overlay {
+  position: absolute;
+  top: -60%;
+  left: 35%;
+  width: 100%;
+  height: 170%;
+  z-index: 3;
+  transition: all 0.5s ease-out;
+  background: url(/RADIAL-4-BAJA.png) no-repeat center center/cover;
+  rotate: -100deg;
+  mix-blend-mode: multiply;
+}
+
+/* --- Capa de Contenido (Texto) --- */
+.content-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 4;
+}
+
+/* Header Texto (Izq Arriba) */
+.header-text {
+  display: flex;
+  flex-flow: column;
+  position: absolute;
+  line-height: 4em;
+  gap: 10px;
+  top: 15%;
+  left: 8%;
+  font-family: var(--font-sans);
+}
+
+.name-light {
+  align-self: flex-end;
+  font-weight: 300;
+  font-size: 3.5rem;
+  margin-left: 0.5em;
+  letter-spacing: -1px;
+  line-height: 1em;
+}
+
+.name-bold {
+  font-weight: 1000;
+  font-size: 3.5rem;
+  margin: 0;
+  color: #04d9ff;
+}
+
+.role-container {
+  display: flex;
+  align-items: center;
+  margin-left: 40px; /* Indentación */
+}
+
+.arrow {
+  font-size: 2.5rem;
+  font-weight: 100;
+  margin-right: 15px;
+  color: #1f1f1f;
+}
+
+.role {
+  font-family: var(--font-serif); /* Fuente cursiva/serif */
+  font-style: italic;
+  font-size: 3.5rem;
+  font-weight: 400;
+  color: #1f1f1f;
+}
+
+/* Slogan (Derecha) */
+.slogan-text {
+  display: flex;
+  flex-flow: column;
+  position: absolute;
+  top: 35%;
+  right: 8%;
+  text-align: right;
+  font-family: var(--font-sans);
+  color: #1f1f1f;
+  line-height: 0.9;
+}
+
+.slogan-text p.small {
+  margin: 0;
+  align-self: flex-start;
+  font-weight: 300;
+  font-size: 3rem;
+}
+
+.slogan-text p.big {
+  align-self: flex-end;
+  margin: 0;
+  margin-left: 0.6em;
+  font-weight: 700;
+  font-size: 4rem; /* "idees" es más grande y negrita */
+}
+
+/* Logo (Abajo Izquierda) */
+.logo-text {
+  position: absolute;
+  bottom: 8%;
+  left: 80%;
+  font-family: serif; /* Times New Roman similar */
+  color: #1f1f1f;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.small-de {
+  font-size: 0.8em;
+  vertical-align: middle;
+}
+
+/* Animaciones */
+.hidden {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s ease-out;
+}
+
+.visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.8s ease-out;
+}
+
+/* =========================================
+   MEDIA QUERIES (BANNER)
+   ========================================= */
+
+/* --- TABLETS Y LAPTOPS PEQUEÑOS (max-width: 1524px) --- */
+@media screen and (min-width: 1224px) {
+  .color-blur-overlay {
+    top: -120%;
+    left: 40%;
+    width: 100%;
+    height: 300%;
+    rotate: -100deg;
+    scale: 0.8;
+  }
+}
+
+/* --- TABLETS Y LAPTOPS PEQUEÑOS (max-width: 1024px) --- */
+@media screen and (max-width: 824px) {
+  .color-blur-overlay {
+    top: -50%;
+    left: 35%;
+    width: 100%;
+    height: 140%;
+    rotate: -100deg;
+  }
+}
+
+/* --- MÓVILES (max-width: 768px) --- */
+@media screen and (max-width: 670px) {
+  /* --- Efecto de color desenfocado (Izquierda) --- */
+  .color-blur-overlay {
+    top: -20%;
+    left: 45%;
+    width: 25em;
+    height: 25em;
+    transition: all 0.5s ease-out;
+  }
+
+  /* Header Texto (Izq Arriba) */
+  .header-text {
+    gap: 10px;
+    top: 7%;
+    left: 2%;
+    text-shadow: 0 2px 4px rgba(255, 255, 255, 0.404);
+  }
+
+  .name-light {
+    font-size: 2.5rem;
+    line-height: 0.5em;
+  }
+
+  .name-bold {
+    font-size: 2.5rem;
+  }
+
+  /* Slogan (Derecha) */
+  .slogan-text {
+    top: 55%;
+    right: 5%;
+  }
+
+  .slogan-text p.small {
+    font-size: 2.5rem;
+    text-shadow: 0 2px 4px rgba(255, 255, 255, 0.5);
+  }
+
+  .slogan-text p.big {
+    font-size: 3.5rem;
+    text-shadow: 0 2px 4px rgba(255, 255, 255, 0.404);
+  }
+
+  /* Logo (Abajo Izquierda) */
+  .logo-text {
+    left: 60%;
+    text-shadow: 0 2px 4px rgba(255, 255, 255, 0.753);
+  }
+
+  .small-de {
+    font-size: 0.8em;
+    vertical-align: middle;
+  }
+}
+
+/* --- MÓVILES MUY PEQUEÑOS (max-width: 380px) --- */
+@media screen and (max-width: 380px) {
+}
+
+/* --- SECCION MENU --- */
+.menu-container {
+  position: relative; /* IMPORTANTE: Esto crea el marco de referencia */
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 5% 3rem 5%; /* Añadimos más padding arriba (4rem) para que las sociales no tapen el menú */
+  font-family: sans-serif;
+
+  .social-sidebar {
+    position: absolute;
+    top: -20px;
+    right: 5%;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    font-size: 1.8rem; /* Un poco más grandes para que luzcan las animaciones */
+
+    a {
+      color: #525458; /* Color gris por defecto como en tu código */
+      text-decoration: none;
+      transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Animación con rebote suave */
+      display: inline-block;
+
+      /* Animación de escalado al pasar el ratón */
+      &:hover {
+        transform: scale(1.2) translateY(-3px);
+      }
+
+      /* Colores de marca al hacer Hover */
+      &.instagram:hover {
+        color: #e1306c;
+        filter: drop-shadow(0 0 8px rgba(225, 48, 108, 0.4));
+      }
+
+      &.facebook:hover {
+        color: #1877f2;
+        filter: drop-shadow(0 0 8px rgba(24, 119, 242, 0.4));
+      }
+
+      &.linkedin:hover {
+        color: #0077b5;
+        filter: drop-shadow(0 0 8px rgba(0, 119, 181, 0.4));
+      }
+    }
+  }
+
+  .menu-grid {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around; /* Alineado a la izquierda para mejor control */
+    gap: 2rem 4rem;
+    width: 100%;
+
+    /* Responsividad simple para el flex-wrap */
+    .menu-item {
+      flex: 0 1 calc(33.33% - 4rem); /* Intenta ocupar 1/3 en desktop */
+      min-width: 200px; /* Si no cabe, salta de línea (responsivo) */
+      display: flex;
+      align-items: center;
+      gap: 15px;
+
+      .circle {
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        filter: blur(10px);
+        opacity: 0.7;
+      }
+
+      .menu-label {
+        text-decoration: none;
+        color: #333;
+        font-size: 1.2rem;
+        font-weight: 500;
+        white-space: nowrap; /* Evita que el texto se parta en dos líneas */
+      }
+    }
+  }
+}

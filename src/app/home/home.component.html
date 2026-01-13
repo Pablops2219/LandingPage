@@ -1,0 +1,440 @@
+<div class="banner-container" id="banner">
+  <div class="background-layer" [style.background-image]="'url(' + currentBg + ')'"></div>
+
+  <!-- <div class="person-layer">
+            <img src="/JUANLUIS19mod.jpg" alt="Juan Luis Gandía" class="person-img">
+        </div> -->
+
+  <div class="color-blur-overlay"></div>
+
+  <div class="content-layer">
+    <div class="header-text">
+      <h2 #nameLight class="name-light hidden">Juan Luis</h2>
+      <h1 #nameBold class="name-bold hidden">Gandía</h1>
+      <h2 #roleContainer class="name-light hidden">→ Rector</h2>
+    </div>
+
+    <div #sloganText class="slogan-text hidden">
+      <p class="small">Un</p>
+      <p class="big">projecte</p>
+      <p class="small">clar.</p>
+    </div>
+
+    <div #logoText class="logo-text hidden">
+      VNIVERSITAT<br />
+      <span class="small-de">DE</span> VALÈNCIA
+    </div>
+  </div>
+</div>
+<button (click)="changeImage()">cambiar img</button>
+<div class="home">
+  <!-- <div class="row mb-2">
+    <div class="col-md-7">
+      <div
+        class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative"
+      >
+        <div class="col p-3 d-flex flex-column position-static">
+          <h3 class="mb-0 pb-2 fw-bold">UN CAFE POR EL FUTURO</h3>
+          <h4 class="card-text m-auto">
+            "La mejor forma de predecir el futuro es creándolo"
+          </h4>
+        </div>
+        <div class="col-md-7 d-lg-block">
+          <img
+            src="/JUANLUIS18.jpg"
+            alt="Thumbnail"
+            class="img-fluid w-100 h-100"
+            style="object-fit: cover"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="col-md-5">
+      <div
+        style="height: 90%"
+        class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative"
+      >
+        <div class="col d-flex flex-row position-static ">
+          <div class="col-md-7 d-lg-block">
+            <img
+              src="/JUANLUIS7.jpg"
+              alt="Thumbnail"
+              class="img-fluid w-100 h-100"
+              style="object-fit: cover"
+            />
+          </div>
+          <h3 style="align-self: center;" class="mb-0 p-3">"El equipo de trabajo"</h3>
+        </div>
+      </div>
+    </div>
+  </div> -->
+
+  <nav class="menu-container">
+    <div class="menu-grid">
+      <div class="menu-item" *ngFor="let item of menuItems">
+        <div class="circle" [style.background-color]="item.color"></div>
+        <a [routerLink]="item.link" class="menu-label">{{ item.label }}</a>
+      </div>
+    </div>
+
+    <div class="social-sidebar">
+      <a class="instagram" href="https://www.instagram.com/juanluis.gandia" target="_blank"
+        ><i class="fab fa-instagram"></i
+      ></a>
+      <a class="facebook" href="https://x.com/juanluis_gandia" target="_blank"
+        ><i class="fab fa-twitter"></i
+      ></a>
+      <a class="linkedin" href="https://www.tiktok.com/@juanluis.gandia" target="_blank"
+        ><i class="fab fa-linkedin"></i
+      ></a>
+    </div>
+  </nav>
+
+
+
+  <div class="test"></div>
+
+  <!-- <div class="row g-5">
+    <div class="col-md-8">
+      <h3 class="pb-4 mb-4 fst-italic border-bottom">
+        Ejemplos de secciones para la web
+      </h3>
+      <article class="blog-post">
+        <h2 class="display-5 link-body-emphasis mb-1">
+          Ejemplo de entrada de blog
+        </h2>
+        <p class="blog-post-meta">
+          1 de enero de 2026 por <a href="#">John</a>
+        </p>
+        <p>
+          Esta publicación de blog muestra algunos tipos diferentes de contenido
+          que es compatible y con estilo con Bootstrap. La tipografía básica,
+          las listas, las tablas, las imágenes, el código y más son compatibles
+          con lo esperado.
+        </p>
+        <hr />
+        <p>
+          Este es un contenido adicional de marcador de posición de párrafo. Se
+          ha escrito para llenar el espacio disponible y mostrar cómo un
+          fragmento de texto más largo afecta el contenido circundante. Lo
+          repetiremos a menudo para mantener la demostración fluyendo, así que
+          esté atento a esta misma cadena de texto.
+        </p>
+        <h2>Calculaciones</h2>
+        <p>Este es un ejemplo de blockquote en acción:</p>
+        <blockquote class="blockquote">
+          <p>El texto citado va aquí.</p>
+        </blockquote>
+        <p>
+          Este es un contenido adicional de marcador de posición de párrafo. Se
+          ha escrito para llenar el espacio disponible y mostrar cómo un
+          fragmento de texto más largo afecta el contenido circundante. Lo
+          repetiremos a menudo para mantener la demostración fluyendo, así que
+          esté atento a esta misma cadena de texto.
+        </p>
+        <h3>Listas de ejemplo</h3>
+        <p>
+          Este es un contenido adicional de marcador de posición de párrafo. Es
+          una versión ligeramente más corta del otro texto corporal altamente
+          repetitivo utilizado en todo. Esta es una lista de instrucciones de
+          ejemplo:
+        </p>
+        <ul>
+          <li>Artículo de primera lista</li>
+          <li>Artículo de la segunda lista con una descripción más larga</li>
+          <li>Elemento de la tercera lista para cerrarlo</li>
+        </ul>
+        <p>Y esta es una lista ordenada:</p>
+        <ol>
+          <li>Artículo de primera lista</li>
+          <li>Artículo de la segunda lista con una descripción más larga</li>
+          <li>Elemento de la tercera lista para cerrarlo</li>
+        </ol>
+        <p>Y esta es una lista de definiciones:</p>
+        <dl>
+          <dt>Lenguaje de marcado de hipertexto (HTML)</dt>
+          <dd>
+            El lenguaje utilizado para describir y definir el contenido de una
+            página web
+          </dd>
+          <dt>Hojas de estilo en cascada (CSS)</dt>
+          <dd>Se utiliza para describir la apariencia de contenido web</dd>
+          <dt>JavaScript (JS)</dt>
+          <dd>
+            El lenguaje de programación utilizado para construir sitios web y
+            aplicaciones avanzadas
+          </dd>
+        </dl>
+        <h2>Elementos HTML en línea</h2>
+        <p>
+          HTML define una larga lista de etiquetas en línea disponibles, una
+          lista completa de las cuales se puede encontrar en la
+          <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element"
+            >Red</a
+          >
+          de
+          <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element"
+            >desarrolladores de Mozilla</a
+          >.
+        </p>
+        <ul>
+          <li>
+            <strong>Para el texto en negrita</strong>, utilice
+            <code class="language-plaintext highlighter-rouge"
+              >&lt;strong&gt;</code
+            >.
+          </li>
+          <li>
+            <em>Para hacer italicización del texto</em>, utilice
+            <code class="language-plaintext highlighter-rouge">&lt;em&gt;</code
+            >.
+          </li>
+          <li>
+            Las abreviaturas, como
+            <abbr title="Lenguaje de marcado de hipertexto">HTML</abbr>, deben
+            usar
+            <code class="language-plaintext highlighter-rouge"
+              >&lt;abbr&gt;</code
+            >, con un opcional
+            <code class="language-plaintext highlighter-rouge">title</code
+            >Atributo para la frase completa.
+          </li>
+          <li>
+            Citas, como <cite>— Mark Otto</cite>, debe utilizar
+            <code class="language-plaintext highlighter-rouge"
+              >&lt;cite&gt;</code
+            >.
+          </li>
+          <li>
+            El texto <del>eliminado</del> debería usar
+            <code class="language-plaintext highlighter-rouge">&lt;del&gt;</code
+            >Y <ins>el</ins> texto <ins>insertado</ins> debe utilizar
+            <code class="language-plaintext highlighter-rouge">&lt;ins&gt;</code
+            >.
+          </li>
+          <li>
+            Usos <sup>de texto</sup> de superíndice
+            <code class="language-plaintext highlighter-rouge">&lt;sup&gt;</code
+            >y el <sub>texto</sub> del subíndice utiliza
+            <code class="language-plaintext highlighter-rouge">&lt;sub&gt;</code
+            >.
+          </li>
+        </ul>
+        <p>
+          La mayoría de estos elementos son diseñados por navegadores con pocas
+          modificaciones por nuestra parte.
+        </p>
+        <h2>Encabezado</h2>
+        <p>
+          Este es un contenido adicional de marcador de posición de párrafo. Se
+          ha escrito para llenar el espacio disponible y mostrar cómo un
+          fragmento de texto más largo afecta el contenido circundante. Lo
+          repetiremos a menudo para mantener la demostración fluyendo, así que
+          esté atento a esta misma cadena de texto.
+        </p>
+        <h3>Sub-encabezado</h3>
+        <p>
+          Este es un contenido adicional de marcador de posición de párrafo. Se
+          ha escrito para llenar el espacio disponible y mostrar cómo un
+          fragmento de texto más largo afecta el contenido circundante. Lo
+          repetiremos a menudo para mantener la demostración fluyendo, así que
+          esté atento a esta misma cadena de texto.
+        </p>
+        <pre><code>Example code block</code></pre>
+        <p>
+          Este es un contenido adicional de marcador de posición de párrafo. Es
+          una versión ligeramente más corta del otro texto corporal altamente
+          repetitivo utilizado en todo.
+        </p>
+      </article>
+      <article class="blog-post">
+        <h2 class="display-5 link-body-emphasis mb-1">Otra entrada de blog</h2>
+        <p class="blog-post-meta">
+          8 de diciembre de 2025 por <a href="#">Jacobo</a>
+        </p>
+        <p>
+          Este es un contenido adicional de marcador de posición de párrafo. Se
+          ha escrito para llenar el espacio disponible y mostrar cómo un
+          fragmento de texto más largo afecta el contenido circundante. Lo
+          repetiremos a menudo para mantener la demostración fluyendo, así que
+          esté atento a esta misma cadena de texto.
+        </p>
+        <blockquote>
+          <p>
+            Una cita más larga va aquí, tal vez con un
+            <strong>texto enfatizado</strong> en medio de ella.
+          </p>
+        </blockquote>
+        <p>
+          Este es un contenido adicional de marcador de posición de párrafo. Se
+          ha escrito para llenar el espacio disponible y mostrar cómo un
+          fragmento de texto más largo afecta el contenido circundante. Lo
+          repetiremos a menudo para mantener la demostración fluyendo, así que
+          esté atento a esta misma cadena de texto.
+        </p>
+        <h3>Tabla de ejemplo</h3>
+        <p>Y no te olvides de las tablas en estos posts:</p>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Nombre</th>
+              <th>Ventajas</th>
+              <th>Desventajas</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Alice</td>
+              <td>10</td>
+              <td>11</td>
+            </tr>
+            <tr>
+              <td>Bob</td>
+              <td>4</td>
+              <td>3</td>
+            </tr>
+            <tr>
+              <td>Charlie</td>
+              <td>7</td>
+              <td>9</td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <td>Totales</td>
+              <td>21</td>
+              <td>23</td>
+            </tr>
+          </tfoot>
+        </table>
+        <p>
+          Este es un contenido adicional de marcador de posición de párrafo. Es
+          una versión ligeramente más corta del otro texto corporal altamente
+          repetitivo utilizado en todo.
+        </p>
+      </article>
+      <article class="blog-post">
+        <h2 class="display-5 link-body-emphasis mb-1">Nueva característica</h2>
+        <p class="blog-post-meta">
+          6 de diciembre de 2025 por <a href="#">Chris</a>
+        </p>
+        <p>
+          Este es un contenido adicional de marcador de posición de párrafo. Se
+          ha escrito para llenar el espacio disponible y mostrar cómo un
+          fragmento de texto más largo afecta el contenido circundante. Lo
+          repetiremos a menudo para mantener la demostración fluyendo, así que
+          esté atento a esta misma cadena de texto.
+        </p>
+        <ul>
+          <li>Artículo de primera lista</li>
+          <li>Artículo de la segunda lista con una descripción más larga</li>
+          <li>Elemento de la tercera lista para cerrarlo</li>
+        </ul>
+        <p>
+          Este es un contenido adicional de marcador de posición de párrafo. Es
+          una versión ligeramente más corta del otro texto corporal altamente
+          repetitivo utilizado en todo.
+        </p>
+      </article>
+      <nav class="blog-pagination" aria-label="Pagination">
+        <a class="btn btn-outline-primary rounded-pill" href="">Anterior</a>
+        <a
+          class="btn btn-outline-secondary rounded-pill disabled"
+          aria-disabled="true"
+          >Siguiente</a
+        >
+      </nav>
+    </div>
+    <div class="col-md-4">
+      <div class="position-sticky" style="top: 5rem">
+        <div class="p-4 mb-3 bg-body-tertiary rounded">
+          <h4 class="fst-italic fw-bold">Sobre mí</h4>
+          <p class="mb-0">
+            Hola soy Jose Luís Gandía, catedrático de economía en la UV y
+            candidato a la alcaldía de Valencia. Me apasiona mejorar nuestra
+            ciudad y trabajar por el bienestar de sus habitantes.
+          </p>
+        </div>
+        <div>
+          <h4 class="fst-italic">Articulos recientes</h4>
+          <ul class="list-unstyled">
+            <li>
+              <a
+                class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top"
+                href="#"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="bd-placeholder-img"
+                  height="96"
+                  preserveAspectRatio="xMidYMid slice"
+                  width="100%"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <rect width="100%" height="100%" fill="#777"></rect>
+                </svg>
+                <div class="col-lg-8">
+                  <h6 class="mb-0">Ejemplo de titulo de articulo</h6>
+                  <small class="text-body-secondary">4 noviembre de 2025</small>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a
+                class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top"
+                href="#"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="bd-placeholder-img"
+                  height="96"
+                  preserveAspectRatio="xMidYMid slice"
+                  width="100%"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <rect width="100%" height="100%" fill="#777"></rect>
+                </svg>
+                <div class="col-lg-8">
+                  <h6 class="mb-0">Otro ejemplo de titulo de articulo</h6>
+                  <small class="text-body-secondary">2 noviembre de 2025</small>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a
+                class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top"
+                href="#"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="bd-placeholder-img"
+                  height="96"
+                  preserveAspectRatio="xMidYMid slice"
+                  width="100%"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <rect width="100%" height="100%" fill="#777"></rect>
+                </svg>
+                <div class="col-lg-8">
+                  <h6 class="mb-0">
+                    Ejemplo de titulo de articulo largo, este tiene varias
+                    lineas
+                  </h6>
+                  <small class="text-body-secondary">1 noviembre de 2025</small>
+                </div>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="p-4">
+          <h4 class="fst-italic">Otros sitios donde encontrarme</h4>
+          <ol class="list-unstyled">
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">Twitter</a></li>
+            <li><a href="#">Facebook</a></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div> -->
+</div>
