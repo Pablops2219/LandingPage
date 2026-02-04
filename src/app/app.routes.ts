@@ -4,6 +4,9 @@ import { TestComponent } from './test/test.component';
 import { CandidatComponent } from './candidat/candidat.component';
 import { EquipComponent } from './equip/equip.component';
 import { ProgramaComponent } from './programa/programa.component';
+import { ProposaComponent } from './proposa/proposa.component';
+import { CampanyaComponent } from './campanya/campanya.component';
+import { AgendaComponent } from './agenda/agenda.component';
 
 export const routes: Routes = [
   {
@@ -25,7 +28,7 @@ export const routes: Routes = [
   },
   {
     path: 'agenda',
-    component: TestComponent,
+    component: AgendaComponent,
   },
   {
     path: 'programa',
@@ -33,11 +36,11 @@ export const routes: Routes = [
   },
   {
     path: 'campanya',
-    component: TestComponent,
+    component: CampanyaComponent,
   },
   {
     path: 'proposa',
-    component: TestComponent,
+    component: ProposaComponent,
   },
   {
     path: 'test',

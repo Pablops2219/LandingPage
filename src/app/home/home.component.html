@@ -1,13 +1,12 @@
 <div class="banner-container" id="banner">
-  <div class="background-layer" [style.background-image]="'url(' + currentBg + ')'"></div>
-
-  <!-- <div class="person-layer">
-            <img src="/JUANLUIS19mod.jpg" alt="Juan Luis Gandía" class="person-img">
-        </div> -->
+  <div
+    class="background-layer"
+    [style.background-image]="'url(' + currentBg + ')'"
+  ></div>
 
   <div class="color-blur-overlay"></div>
 
-  <div class="content-layer">
+  <!-- <div class="content-layer">
     <div class="header-text">
       <h2 #nameLight class="name-light hidden">Juan Luis</h2>
       <h1 #nameBold class="name-bold hidden">Gandía</h1>
@@ -24,9 +23,8 @@
       VNIVERSITAT<br />
       <span class="small-de">DE</span> VALÈNCIA
     </div>
-  </div>
+  </div> -->
 </div>
-<button (click)="changeImage()">cambiar img</button>
 <div class="home">
   <!-- <div class="row mb-2">
     <div class="col-md-7">
@@ -68,7 +66,29 @@
       </div>
     </div>
   </div> -->
-
+  <div class="socials-slogan-container">
+    <div class="slogan-sidebar">
+      <p>Amb vosaltres</p>
+      <p>es pot canviar.</p>
+    </div>
+    <div class="social-sidebar">
+      <a
+        class="instagram"
+        href="https://www.instagram.com/juanluis.gandia"
+        target="_blank"
+        ><i class="fab fa-instagram"></i
+      ></a>
+      <a class="facebook" href="#" target="_blank"
+        ><i class="fab fa-facebook"></i
+      ></a>
+      <a
+        class="linkedin"
+        href="https://www.linkedin.com/in/juan-luis-gand%C3%ADa-cabedo-33794816"
+        target="_blank"
+        ><i class="fab fa-linkedin"></i
+      ></a>
+    </div>
+  </div>
   <nav class="menu-container">
     <div class="menu-grid">
       <div class="menu-item" *ngFor="let item of menuItems">
@@ -76,21 +96,7 @@
         <a [routerLink]="item.link" class="menu-label">{{ item.label }}</a>
       </div>
     </div>
-
-    <div class="social-sidebar">
-      <a class="instagram" href="https://www.instagram.com/juanluis.gandia" target="_blank"
-        ><i class="fab fa-instagram"></i
-      ></a>
-      <a class="facebook" href="https://x.com/juanluis_gandia" target="_blank"
-        ><i class="fab fa-twitter"></i
-      ></a>
-      <a class="linkedin" href="https://www.tiktok.com/@juanluis.gandia" target="_blank"
-        ><i class="fab fa-linkedin"></i
-      ></a>
-    </div>
   </nav>
-
-
 
   <div class="test"></div>
 

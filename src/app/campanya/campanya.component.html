@@ -1,0 +1,35 @@
+<page-header 
+      [text]="''" 
+      [highlightedText]="'Campanya'" 
+      [color1]="'#e61616ff'" 
+      [color2]="'#e61616ff'"></page-header>
+<div class="news-container">
+
+  <main class="news-feed">
+    <article class="main-article">
+      <div class="image-wrapper">
+        <img [src]="mainNews.imageUrl" [alt]="mainNews.title" />
+        <!-- <span class="live-tag">EN DIRECTO</span> -->
+      </div>
+      <div class="content">
+        <h2 class="main-title">{{ mainNews.title }}</h2>
+        <p class="meta">{{ mainNews.source }}</p>
+        <p class="date">{{ mainNews.date }}</p>
+      </div>
+    </article>
+
+    <div class="secondary-list">
+      <article *ngFor="let news of secondaryNews" class="secondary-article">
+        <div class="secondary-content">
+          <img [src]="news.imageUrl" [alt]="news.title" class="thumb" />
+          <div class="text-group">
+            <!-- <span class="label">ÚLTIMA HORA</span> -->
+            <h3 class="secondary-title">{{ news.title }}</h3>
+            <p class="meta">{{ news.source }}</p>
+            <p class="date">{{ news.date }}</p>
+          </div>
+        </div>
+      </article>
+    </div>
+  </main>
+</div>

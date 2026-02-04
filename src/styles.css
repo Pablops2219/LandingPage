@@ -1,20 +1,6 @@
-@font-face {
-  font-family: 'AktivGrotesk';
-  src: url('/AktivGrotesk-Thin.ttf');
-}
-
 /* Simple modern reset + utility */
 :root {
-  /* --accent: #b71c1c;
-  --dark: #0f1720;
-  --muted: #6b7280;
-  --card: #ffffff;
-  --bg: #f6f7f9;
-  --glass: rgba(255, 255, 255, 0.85);
-  --maxw: 1100px; */
-  /* font-family: "Montserrat", Inter, system-ui, -apple-system, "Segoe UI", Roboto,
-    "Helvetica Neue", Arial; */
-  --bs-body-font-family: 'AktivGrotesk', serif;
+  font-family: "AktivGrotesk";
 }
 
 .test {
@@ -230,7 +216,6 @@ footer {
   display: flex;
 }
 
-
 .navbar {
   border-bottom: 2px solid lightgray;
 }
@@ -269,3 +254,4 @@ footer {
 .home {
   margin: 30px;
 }
+

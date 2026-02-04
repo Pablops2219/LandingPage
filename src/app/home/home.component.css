@@ -53,7 +53,6 @@
   gap: 10px;
   top: 15%;
   left: 8%;
-  font-family: var(--font-sans);
 }
 
 .name-light {
@@ -86,39 +85,10 @@
 }
 
 .role {
-  font-family: var(--font-serif); /* Fuente cursiva/serif */
   font-style: italic;
   font-size: 3.5rem;
   font-weight: 400;
   color: #1f1f1f;
-}
-
-/* Slogan (Derecha) */
-.slogan-text {
-  display: flex;
-  flex-flow: column;
-  position: absolute;
-  top: 35%;
-  right: 8%;
-  text-align: right;
-  font-family: var(--font-sans);
-  color: #1f1f1f;
-  line-height: 0.9;
-}
-
-.slogan-text p.small {
-  margin: 0;
-  align-self: flex-start;
-  font-weight: 300;
-  font-size: 3rem;
-}
-
-.slogan-text p.big {
-  align-self: flex-end;
-  margin: 0;
-  margin-left: 0.6em;
-  font-weight: 700;
-  font-size: 4rem; /* "idees" es más grande y negrita */
 }
 
 /* Logo (Abajo Izquierda) */
@@ -126,7 +96,6 @@
   position: absolute;
   bottom: 8%;
   left: 80%;
-  font-family: serif; /* Times New Roman similar */
   color: #1f1f1f;
   text-transform: uppercase;
   font-size: 1.2rem;
@@ -207,22 +176,6 @@
     font-size: 2.5rem;
   }
 
-  /* Slogan (Derecha) */
-  .slogan-text {
-    top: 55%;
-    right: 5%;
-  }
-
-  .slogan-text p.small {
-    font-size: 2.5rem;
-    text-shadow: 0 2px 4px rgba(255, 255, 255, 0.5);
-  }
-
-  .slogan-text p.big {
-    font-size: 3.5rem;
-    text-shadow: 0 2px 4px rgba(255, 255, 255, 0.404);
-  }
-
   /* Logo (Abajo Izquierda) */
   .logo-text {
     left: 60%;
@@ -241,17 +194,104 @@
 
 /* --- SECCION MENU --- */
 .menu-container {
-  position: relative; /* IMPORTANTE: Esto crea el marco de referencia */
+  position: relative;
   display: flex;
+  
   flex-direction: column;
-  padding: 2rem 5% 3rem 5%; /* Añadimos más padding arriba (4rem) para que las sociales no tapen el menú */
-  font-family: sans-serif;
+  padding: 5rem 5% 3rem 0; /* Añadimos más padding arriba (4rem) para que las sociales no tapen el menú */
+  
 
-  .social-sidebar {
-    position: absolute;
-    top: -20px;
-    right: 5%;
+  }
+  
+
+  
+  .menu-grid {
+    
     display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    gap: 4rem 4rem;
+    width: 100%;
+
+    /* Responsividad simple para el flex-wrap */
+    .menu-item {
+      
+      flex: 0 1 calc(33.33% - 4rem); /* Intenta ocupar 1/3 en desktop */
+      min-width: 200px; /* Si no cabe, salta de línea (responsivo) */
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      gap: 15px;
+
+      .circle {
+        transition: all 0.6s ease;
+        position: absolute;
+        z-index: -1;
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        filter: blur(20px);
+        opacity: 0.7;
+      }
+
+      .menu-label {
+        padding-left: 20px;
+        text-decoration: none;
+        color: #333;
+        font-size: 2rem;
+        font-weight: 500;
+        white-space: nowrap; /* Evita que el texto se parta en dos líneas */
+      }
+    }
+
+    .menu-item:hover .circle {
+      transform: scale(1.3);
+        opacity: 0.9;
+    }
+  }
+
+.socials-slogan-container{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+
+.slogan-sidebar {
+  margin: 10px 0;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 10px;
+    font-size: 3rem;
+  }
+  @media (max-width: 768px) {
+  .slogan-sidebar p {
+    line-height: 40px;
+    white-space: nowrap;
+  }
+
+  .slogan-sidebar{
+    margin-bottom: 50px;
+  }
+}
+
+  .slogan-sidebar p:nth-child(1) {
+  margin: 0;
+    font-style: italic;
+    font-weight: 700;
+    color: #000000;
+  }
+
+  .slogan-sidebar p:nth-child(2) {
+  margin: 0;
+    font-weight: 50;
+    color: #000000;
+  }
+
+  
+  .social-sidebar {
+    display: flex;
+    align-items: center;
     flex-direction: row;
     gap: 20px;
     font-size: 1.8rem; /* Un poco más grandes para que luzcan las animaciones */
@@ -282,39 +322,4 @@
         color: #0077b5;
         filter: drop-shadow(0 0 8px rgba(0, 119, 181, 0.4));
       }
-    }
-  }
-
-  .menu-grid {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-around; /* Alineado a la izquierda para mejor control */
-    gap: 2rem 4rem;
-    width: 100%;
-
-    /* Responsividad simple para el flex-wrap */
-    .menu-item {
-      flex: 0 1 calc(33.33% - 4rem); /* Intenta ocupar 1/3 en desktop */
-      min-width: 200px; /* Si no cabe, salta de línea (responsivo) */
-      display: flex;
-      align-items: center;
-      gap: 15px;
-
-      .circle {
-        width: 70px;
-        height: 70px;
-        border-radius: 50%;
-        filter: blur(10px);
-        opacity: 0.7;
-      }
-
-      .menu-label {
-        text-decoration: none;
-        color: #333;
-        font-size: 1.2rem;
-        font-weight: 500;
-        white-space: nowrap; /* Evita que el texto se parta en dos líneas */
-      }
-    }
-  }
-}
+    }}

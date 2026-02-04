@@ -1,0 +1,49 @@
+<page-header
+  [text]="'Test Component'"
+  [highlightedText]="'Highlight'"
+  [color1]="'#FF5733'"
+  [color2]="'#FF5733'"
+></page-header>
+<body>
+  <div class="circle-container">
+    <img class="layer1" src="02. MISSIONS.png" alt="" />
+    <img class="layer2" src="03. COMUNITAT.png" alt="" />
+    <img class="layer3" src="04. POLÍTIQUES.png" alt="" />
+    <img class="layer4" src="05. RECURSOS.png" alt="" />
+    <img class="layer5" src="06. GOVERNANÇA.png" alt="" />
+
+    <div class="wireframe">
+      <div
+        (click)="onClick(1)"
+        (mouseover)="onMouseOver(1)"
+        (mouseout)="onMouseOut(1)"
+      ></div>
+      <div
+        (click)="onClick(2)"
+        (mouseover)="onMouseOver(2)"
+        (mouseout)="onMouseOut(2)"
+      ></div>
+      <div
+        (click)="onClick(3)"
+        (mouseover)="onMouseOver(3)"
+        (mouseout)="onMouseOut(3)"
+      ></div>
+      <div
+        (click)="onClick(4)"
+        (mouseover)="onMouseOver(4)"
+        (mouseout)="onMouseOut(4)"
+      ></div>
+      <div
+        (click)="onClick(5)"
+        (mouseover)="onMouseOver(5)"
+        (mouseout)="onMouseOut(5)"
+      ></div>
+    </div>
+  </div>
+</body>
+
+<!-- 
+<div class="parent">
+  <img class="image1" src="https://placehold.co/600x400" />
+  <img class="image2" src="https://placehold.co/580x380" />
+</div> -->

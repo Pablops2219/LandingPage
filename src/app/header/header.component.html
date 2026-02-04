@@ -1,5 +1,6 @@
-<nav class="navbar" [class.sticky]="isSticky">
-  <div class="container-fluid text-align">
+<!-- <nav class="navbar" [class.sticky]="isSticky"> -->
+  <nav class="navbar">
+  <div class="container-fluid cf text-align">
     <a class="navbar-brand" href="/home"><img class="logoimg" src="/web3.jpg" alt=""></a>
     <button
       class="navbar-toggler"
@@ -28,13 +29,10 @@
       </div>
       <div class="offcanvas-body navbar-styles">
         <ul class="navbar-nav justify-content-end flex-grow-1 pe-4">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">BOTON 1</a>
+          <li class="nav-item" *ngFor="let item of menuItems">
+            <a class="nav-link active" aria-current="page" [href]="item.link">{{ item.label }}</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">BOTON 2</a>
-          </li>
-          <li class="nav-item dropdown">
+          <!-- <li class="nav-item dropdown">
             <a
               class="nav-link dropdown-toggle"
               href="#"
@@ -52,9 +50,11 @@
               </li>
               <li><a class="dropdown-item" href="#">MENU 3</a></li>
             </ul>
-          </li>
+          </li> -->
         </ul>
       </div>
     </div>
+    
+    <a class="navbar-brand" href="/home"><img class="logoimg" src="/logouv.jpg" alt=""></a>
   </div>
 </nav>

@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
-import { Component, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
+import { Component, AfterViewInit, ViewChild, ElementRef, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { MenuitemsService } from '../services/menuitems.service';
 
 @Component({
   selector: 'app-home',
@@ -10,6 +11,7 @@ import { RouterLink } from '@angular/router';
   styleUrl: './home.component.css',
 })
 export class HomeComponent implements AfterViewInit {
+[x: string]: any;
   // Obtenemos referencias directas a los elementos del HTML
   @ViewChild('nameLight') nameLight!: ElementRef;
   @ViewChild('nameBold') nameBold!: ElementRef;
@@ -18,6 +20,15 @@ export class HomeComponent implements AfterViewInit {
   @ViewChild('logoText') logoText!: ElementRef;
 
   constructor() {}
+
+  private menuItemsService = inject(MenuitemsService);
+  menuItems: any[] = [];
+  
+  ngOnInit(): void {
+    //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
+    //Add 'implements OnInit' to the class.
+    this.menuItems = this.menuItemsService.getMenuItems();
+  }
 
   // Usamos ngAfterViewInit, no ngOnInit
   ngAfterViewInit(): void {
@@ -47,22 +58,5 @@ export class HomeComponent implements AfterViewInit {
       }
     });
   }
-
-  menuItems = [
-    { label: "L'Equip", link: '/equip', color: '#ff4081' },
-    { label: 'El candidat', link: '/candidat', color: '#ff9800' },
-    { label: 'Agenda', link: '/agenda', color: '#03a9f4' },
-    { label: 'El programa', link: '/programa', color: '#30e720ff' },
-    { label: 'Campanya', link: '/campanya', color: '#e61616ff' },
-    { label: 'Proposa', link: '/proposa', color: '#ffd740' },
-  ];
-
   currentBg = '/FOTO3.jpg';
-  changeImage(): void {
-    // Alternamos entre las dos imágenes
-    this.currentBg = this.currentBg.includes('FOTO3.jpg')
-      ? '/FOTO2.jpg'
-      : '/FOTO3.jpg';
-      console.log('Imagen cambiada a:', this.currentBg);
-  }
 }
